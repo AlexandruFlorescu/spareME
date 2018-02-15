@@ -12,13 +12,29 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
+import styled from 'styled-components';
+import Total from 'containers/Total';
+import Roundups from 'containers/Roundups';
+import MyCharities from 'containers/MyCharities';
+
+const Sections = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
+`;
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <Sections>
+        <Total></Total>
+        <Roundups></Roundups>
+        <MyCharities></MyCharities>
+      </Sections>
     );
   }
 }
